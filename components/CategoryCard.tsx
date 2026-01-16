@@ -56,6 +56,8 @@ export function CategoryCard({ category }: CategoryCardProps) {
                   ? "MUI"
                   : component.library === "antd"
                   ? "Ant Design"
+                  : component.library === "custom"
+                  ? "Custom"
                   : "Recharts"}
               </span>
             </div>

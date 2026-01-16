@@ -40,6 +40,7 @@ export function ComponentSearch() {
         renderInput={(params) => (
           <TextField
             {...params}
+            id="component-search-input"
             label="Search for a component..."
             placeholder="Type to search (e.g., Button, Chart, Gauge)"
             variant="outlined"

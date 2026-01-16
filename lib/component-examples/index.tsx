@@ -37,6 +37,12 @@ import { areaChartExamples } from "./charts/area-chart";
 import { pieChartExamples } from "./charts/pie-chart";
 import { composedChartExamples } from "./charts/composed-chart";
 
+// Custom Widgets
+import { BasicBinExamples as BasicStorageBinExamples } from "./custom-widgets/basic-storage-bin";
+import { miningBinExamples as BasicTrapezoidBinExamples } from "./custom-widgets/basic-trapezoid-bin";
+import { IndustrialHopperExamples as BasicBinHopperExamples } from "./custom-widgets/basic-bin-hopper";
+import { IndustrialBinHopperExamples } from "./custom-widgets/industrial-bin-hopper";
+
 const examplesMap: Record<string, ComponentExample[]> = {
   button: buttonExamples,
   "text-field": textFieldExamples,
@@ -63,6 +69,10 @@ const examplesMap: Record<string, ComponentExample[]> = {
   "area-chart": areaChartExamples,
   "pie-chart": pieChartExamples,
   "composed-chart": composedChartExamples,
+  "basic-storage-bin": BasicStorageBinExamples,
+  "basic-trapezoid-bin": BasicTrapezoidBinExamples,
+  "basic-bin-hopper": BasicBinHopperExamples,
+  "industrial-bin-hopper": IndustrialBinHopperExamples,
 };
 
 export function getComponentExamples(componentId: string): ComponentExample[] {

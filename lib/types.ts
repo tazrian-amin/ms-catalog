@@ -1,5 +1,3 @@
-// Types for the MS Component Catalog
-
 export interface Component {
   id: string;
   name: string;
