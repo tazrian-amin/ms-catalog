@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Slider, Card, Row, Col, Statistic } from "antd";
+import { Slider, Card, Statistic, Row, Col } from "antd";
 import { ComponentExample } from "../../types";
 
 // Industrial Bin Hopper Component
@@ -420,32 +420,32 @@ const IndustrialBinHopper: React.FC<IndustrialBinHopperProps> = ({
             onChange={handleSliderChange}
             marks={{ 0: "Empty", 25: "25%", 50: "50%", 75: "75%", 100: "Full" }}
           />
-          <div
-            style={{
-              marginTop: "12px",
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
-            <Statistic
-              title="Current Load"
-              value={currentAmount}
-              suffix="tons"
-              styles={{ content: { fontSize: "16px" } }}
-            />
-            <Statistic
-              title="Capacity"
-              value={capacity}
-              suffix="tons"
-              styles={{ content: { fontSize: "16px" } }}
-            />
-            <Statistic
-              title="Available"
-              value={((capacity * (100 - currentFill)) / 100).toFixed(1)}
-              suffix="tons"
-              styles={{ content: { fontSize: "16px", color: "#52c41a" } }}
-            />
-          </div>
+          <Row gutter={[16, 16]} style={{ marginTop: "12px" }}>
+            <Col xs={24} sm={8}>
+              <Statistic
+                title="Current Load"
+                value={currentAmount}
+                suffix="tons"
+                styles={{ content: { fontSize: "16px" } }}
+              />
+            </Col>
+            <Col xs={24} sm={8}>
+              <Statistic
+                title="Capacity"
+                value={capacity}
+                suffix="tons"
+                styles={{ content: { fontSize: "16px" } }}
+              />
+            </Col>
+            <Col xs={24} sm={8}>
+              <Statistic
+                title="Available"
+                value={((capacity * (100 - currentFill)) / 100).toFixed(1)}
+                suffix="tons"
+                styles={{ content: { fontSize: "16px", color: "#52c41a" } }}
+              />
+            </Col>
+          </Row>
         </div>
       )}
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Slider, Card, Statistic } from "antd";
+import { Slider, Card, Statistic, Row, Col } from "antd";
 import { ComponentExample } from "../../types";
 
 // Basic Bin Component - Simple storage container visualization
@@ -178,32 +178,32 @@ const BasicBin: React.FC<BasicBinProps> = ({
             onChange={handleSliderChange}
             marks={{ 0: "Empty", 50: "50%", 100: "Full" }}
           />
-          <div
-            style={{
-              marginTop: "12px",
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
-            <Statistic
-              title="Current"
-              value={currentAmount}
-              suffix={unit}
-              styles={{ content: { fontSize: "16px" } }}
-            />
-            <Statistic
-              title="Capacity"
-              value={capacity}
-              suffix={unit}
-              styles={{ content: { fontSize: "16px" } }}
-            />
-            <Statistic
-              title="Available"
-              value={((capacity * (100 - currentFill)) / 100).toFixed(1)}
-              suffix={unit}
-              styles={{ content: { fontSize: "16px", color: "#52c41a" } }}
-            />
-          </div>
+          <Row gutter={[16, 16]} style={{ marginTop: "12px" }}>
+            <Col xs={24} sm={8}>
+              <Statistic
+                title="Current"
+                value={currentAmount}
+                suffix={unit}
+                styles={{ content: { fontSize: "16px" } }}
+              />
+            </Col>
+            <Col xs={24} sm={8}>
+              <Statistic
+                title="Capacity"
+                value={capacity}
+                suffix={unit}
+                styles={{ content: { fontSize: "16px" } }}
+              />
+            </Col>
+            <Col xs={24} sm={8}>
+              <Statistic
+                title="Available"
+                value={((capacity * (100 - currentFill)) / 100).toFixed(1)}
+                suffix={unit}
+                styles={{ content: { fontSize: "16px", color: "#52c41a" } }}
+              />
+            </Col>
+          </Row>
         </div>
       )}
     </div>

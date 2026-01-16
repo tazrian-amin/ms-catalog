@@ -285,8 +285,8 @@ export const miningBinExamples: ComponentExample[] = [
     title: "Bin with Statistics",
     description: "Combine bin visualization with statistical data",
     code: `<Card title="Storage Bin Monitor">
-  <Row gutter={16}>
-    <Col span={12}>
+  <Row gutter={[16, 16]}>
+    <Col xs={24} md={12}>
       <MiningBin 
         fillLevel={72} 
         capacity={300} 
@@ -295,7 +295,7 @@ export const miningBinExamples: ComponentExample[] = [
         height={240}
       />
     </Col>
-    <Col span={12}>
+    <Col xs={24} md={12}>
       <div style={{ marginTop: '40px' }}>
         <Statistic
           title="Current Load"
@@ -321,8 +321,8 @@ export const miningBinExamples: ComponentExample[] = [
 </Card>`,
     component: (
       <Card title="Storage Bin Monitor">
-        <Row gutter={16}>
-          <Col span={12}>
+        <Row gutter={[16, 16]}>
+          <Col xs={24} md={12}>
             <MiningBin
               fillLevel={72}
               capacity={300}
@@ -331,8 +331,8 @@ export const miningBinExamples: ComponentExample[] = [
               height={240}
             />
           </Col>
-          <Col span={12}>
-            <div style={{ marginTop: "40px" }}>
+          <Col xs={24} md={12}>
+            <div className="flex flex-col items-center justify-center md:items-start md:justify-start">
               <Statistic
                 title="Current Load"
                 value={216}

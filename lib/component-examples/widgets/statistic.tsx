@@ -11,20 +11,20 @@ export const statisticExamples: ComponentExample[] = [
     description: "Display numerical data with labels",
     code: `import { Statistic, Row, Col } from 'antd';
 
-<Row gutter={16}>
-  <Col span={12}>
+<Row gutter={[16, 16]}>
+  <Col xs={24} sm={12}>
     <Statistic title="Active Equipment" value={24} />
   </Col>
-  <Col span={12}>
+  <Col xs={24} sm={12}>
     <Statistic title="Daily Production" value={1250} suffix="tons" />
   </Col>
 </Row>`,
     component: (
-      <Row gutter={16}>
-        <Col span={12}>
+      <Row gutter={[16, 16]}>
+        <Col xs={24} sm={12}>
           <Statistic title="Active Equipment" value={24} />
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Statistic title="Daily Production" value={1250} suffix="tons" />
         </Col>
       </Row>
@@ -36,8 +36,8 @@ export const statisticExamples: ComponentExample[] = [
     code: `import { Statistic, Row, Col } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 
-<Row gutter={16}>
-  <Col span={12}>
+<Row gutter={[16, 16]}>
+  <Col xs={24} sm={12}>
     <Statistic
       title="Efficiency"
       value={11.28}
@@ -47,7 +47,7 @@ import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
       suffix="%"
     />
   </Col>
-  <Col span={12}>
+  <Col xs={24} sm={12}>
     <Statistic
       title="Downtime"
       value={9.3}
@@ -59,8 +59,8 @@ import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
   </Col>
 </Row>`,
     component: (
-      <Row gutter={16}>
-        <Col span={12}>
+      <Row gutter={[16, 16]}>
+        <Col xs={24} sm={12}>
           <Statistic
             title="Efficiency"
             value={11.28}
@@ -70,7 +70,7 @@ import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
             suffix="%"
           />
         </Col>
-        <Col span={12}>
+        <Col xs={24} sm={12}>
           <Statistic
             title="Downtime"
             value={9.3}
@@ -89,8 +89,8 @@ import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
     code: `import { Statistic, Row, Col, Card } from 'antd';
 import { ArrowUpOutlined } from '@ant-design/icons';
 
-<Row gutter={16}>
-  <Col span={8}>
+<Row gutter={[16, 16]}>
+  <Col xs={24} sm={12} md={8}>
     <Card>
       <Statistic
         title="Total Ore Mined"
@@ -100,7 +100,7 @@ import { ArrowUpOutlined } from '@ant-design/icons';
       />
     </Card>
   </Col>
-  <Col span={8}>
+  <Col xs={24} sm={12} md={8}>
     <Card>
       <Statistic
         title="Equipment Utilization"
@@ -111,7 +111,7 @@ import { ArrowUpOutlined } from '@ant-design/icons';
       />
     </Card>
   </Col>
-  <Col span={8}>
+  <Col xs={24} sm={12} md={8}>
     <Card>
       <Statistic
         title="Safety Score"
@@ -124,8 +124,8 @@ import { ArrowUpOutlined } from '@ant-design/icons';
   </Col>
 </Row>`,
     component: (
-      <Row gutter={16}>
-        <Col span={8}>
+      <Row gutter={[16, 16]}>
+        <Col xs={24} sm={12} md={8}>
           <Card>
             <Statistic
               title="Total Ore Mined"
@@ -135,7 +135,7 @@ import { ArrowUpOutlined } from '@ant-design/icons';
             />
           </Card>
         </Col>
-        <Col span={8}>
+        <Col xs={24} sm={12} md={8}>
           <Card>
             <Statistic
               title="Equipment Utilization"
@@ -146,7 +146,7 @@ import { ArrowUpOutlined } from '@ant-design/icons';
             />
           </Card>
         </Col>
-        <Col span={8}>
+        <Col xs={24} sm={12} md={8}>
           <Card>
             <Statistic
               title="Safety Score"

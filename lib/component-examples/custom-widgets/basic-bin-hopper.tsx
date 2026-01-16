@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Slider, Card, Statistic, Tag } from "antd";
+import { Slider, Card, Statistic, Tag, Row, Col } from "antd";
 import { ComponentExample } from "../../types";
 
 // Industrial Hopper Component - For material handling and processing
@@ -253,32 +253,32 @@ const IndustrialHopper: React.FC<IndustrialHopperProps> = ({
             onChange={handleSliderChange}
             marks={{ 0: "Empty", 50: "50%", 100: "Full" }}
           />
-          <div
-            style={{
-              marginTop: "12px",
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
-            <Statistic
-              title="Current Load"
-              value={currentAmount}
-              suffix={unit}
-              styles={{ content: { fontSize: "16px" } }}
-            />
-            <Statistic
-              title="Capacity"
-              value={capacity}
-              suffix={unit}
-              styles={{ content: { fontSize: "16px" } }}
-            />
-            <Statistic
-              title="Available"
-              value={((capacity * (100 - currentFill)) / 100).toFixed(1)}
-              suffix={unit}
-              styles={{ content: { fontSize: "16px", color: "#52c41a" } }}
-            />
-          </div>
+          <Row gutter={[16, 16]} style={{ marginTop: "12px" }}>
+            <Col xs={24} sm={8}>
+              <Statistic
+                title="Current Load"
+                value={currentAmount}
+                suffix={unit}
+                styles={{ content: { fontSize: "16px" } }}
+              />
+            </Col>
+            <Col xs={24} sm={8}>
+              <Statistic
+                title="Capacity"
+                value={capacity}
+                suffix={unit}
+                styles={{ content: { fontSize: "16px" } }}
+              />
+            </Col>
+            <Col xs={24} sm={8}>
+              <Statistic
+                title="Available"
+                value={((capacity * (100 - currentFill)) / 100).toFixed(1)}
+                suffix={unit}
+                styles={{ content: { fontSize: "16px", color: "#52c41a" } }}
+              />
+            </Col>
+          </Row>
         </div>
       )}
     </div>
@@ -419,17 +419,19 @@ export const IndustrialHopperExamples: ComponentExample[] = [
   {
     title: "Interactive Hopper",
     description: "Interactive hopper with slider control and statistics",
-    code: `<IndustrialHopper 
-  fillLevel={65} 
-  capacity={80} 
-  unit="tons"
-  material="Raw Material"
-  interactive={true}
-  flowRate={10}
-  status="active"
-  width={220}
-  height={300}
-/>`,
+    code: `<Card style={{ maxWidth: "500px", margin: "0 auto" }}>
+  <IndustrialHopper 
+    fillLevel={65} 
+    capacity={80} 
+    unit="tons"
+    material="Raw Material"
+    interactive={true}
+    flowRate={10}
+    status="active"
+    width={220}
+    height={300}
+  />
+</Card>`,
     component: (
       <Card style={{ maxWidth: "500px", margin: "0 auto" }}>
         <IndustrialHopper
