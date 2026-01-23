@@ -3,23 +3,58 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .inputContainer {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inputContainer {
+    gap: 6px;
+  }
 }
 
 .input {
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 5px solid orange;
-  width: 68%;
+  flex: 1;
   height: 100%;
   min-height: 60px;
-  padding: 10px;
-  font-size: clamp(24px, 12vw, 56px);
+  padding: 12px;
+  font-size: clamp(20px, 4vw, 40px);
   font-weight: 700;
   color: #000000;
   letter-spacing: -0.25px;
   line-height: 1.2;
-  min-width: 100px;
+  min-width: 0;
   text-align: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .input {
+    font-size: clamp(18px, 3.5vw, 32px);
+    padding: 10px;
+    border-width: 4px;
+    border-radius: 10px;
+    min-height: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .input {
+    font-size: clamp(16px, 3vw, 28px);
+    min-height: 50px;
+    padding: 8px;
+    border-width: 3px;
+    border-radius: 8px;
+  }
 }
 
 .input:focus {
@@ -33,12 +68,28 @@
 
 .inputLabel {
   text-align: center;
-  font-size: clamp(20px, 4vw, 32px);
+  font-size: clamp(16px, 3vw, 28px);
   font-weight: bold;
   color: #ffffff;
-  width: 68%;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  width: 100%;
+  margin-bottom: 12px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .inputLabel {
+    font-size: clamp(13px, 2.2vw, 20px);
+    margin-bottom: 10px;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inputLabel {
+    font-size: clamp(11px, 1.8vw, 16px);
+    margin-bottom: 8px;
+    margin-top: 4px;
+  }
 }
 
 .buttonContainer {
@@ -47,6 +98,21 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .buttonContainer {
+    width: 20%;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonContainer {
+    width: 18%;
+    gap: 4px;
+  }
 }
 
 .button {
@@ -60,6 +126,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1 1 0;
+  aspect-ratio: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .button {
+    min-height: 35px;
+    max-height: 35px;
+    border-width: 3px;
+    padding: 2px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    min-height: 30px;
+    max-height: 30px;
+    border-width: 2.5px;
+    padding: 2px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .button {
+    min-height: 28px;
+    max-height: 28px;
+    border-width: 2px;
+  }
 }
 
 .button:hover:not(:disabled) {
@@ -101,10 +199,29 @@
 }
 
 .buttonText {
-  font-size: clamp(20px, 6vw, 32px);
+  font-size: clamp(18px, 4vw, 28px);
   font-weight: bold;
   text-align: center;
   text-shadow: 1px 2px 1px #0f172a;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .buttonText {
+    font-size: clamp(14px, 2.5vw, 18px);
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonText {
+    font-size: clamp(12px, 2vw, 16px);
+  }
+}
+
+@media (max-width: 360px) {
+  .buttonText {
+    font-size: clamp(11px, 1.8vw, 14px);
+  }
 }
 
 .disabledContainer {

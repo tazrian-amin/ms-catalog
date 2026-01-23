@@ -10,6 +10,27 @@
   border: 5px solid;
   cursor: pointer;
   transition: opacity 0.2s;
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .button {
+    min-width: 0;
+    flex: 1 1 0;
+    padding: 6px 2px;
+    border-width: 3px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    padding: 5px 1px;
+    border-width: 2px;
+    border-radius: 6px;
+  }
 }
 
 .button:hover:not(:disabled) {
@@ -51,10 +72,51 @@
   box-shadow: 0 0 32px rgba(255, 255, 255, 1);
 }
 
+@media (max-width: 768px) {
+  .runningButton {
+    border-width: 3px;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  .runningButton {
+    border-width: 2px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+  }
+}
+
 .buttonText {
-  font-size: clamp(18px, 12vw, 36px);
+  font-size: clamp(14px, 3vw, 24px);
   letter-spacing: 0.2px;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .buttonText {
+    font-size: clamp(10px, 1.8vw, 14px);
+    letter-spacing: 0.1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonText {
+    font-size: clamp(8px, 1.5vw, 12px);
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .buttonText {
+    font-size: clamp(7px, 1.2vw, 10px);
+  }
 }
 
 .primaryText {

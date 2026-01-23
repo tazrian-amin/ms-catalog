@@ -1,8 +1,22 @@
 .headerSection {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .headerSection {
+    margin-bottom: 16px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerSection {
+    margin-bottom: 12px;
+    gap: 8px;
+  }
 }
 
 .statusText {
@@ -11,21 +25,49 @@
   text-align: center;
   color: #ffffff;
   border: 1px solid #ffffff;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .statusText {
+    font-size: clamp(12px, 2.5vw, 16px);
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statusText {
+    font-size: clamp(11px, 2vw, 14px);
+    padding: 6px 8px;
+    border-radius: 8px;
+  }
 }
 
 .section {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .section {
     flex-direction: column;
+    gap: 16px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    gap: 12px;
   }
 }
 
@@ -33,8 +75,10 @@
   width: 25%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 10px;
+  gap: 16px;
+  padding: 8px;
+  justify-content: center;
+  align-items: stretch;
 }
 
 @media (max-width: 768px) {
@@ -42,19 +86,37 @@
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    gap: 8px;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonContainer {
+    gap: 6px;
   }
 }
 
 .numericFieldContainer {
   width: 70%;
-  padding: 10px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 @media (max-width: 768px) {
   .numericFieldContainer {
     width: 100%;
+    padding: 0;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .numericFieldContainer {
+    gap: 12px;
   }
 }
