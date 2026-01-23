@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isExamplesOpen, setIsExamplesOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -12,6 +13,14 @@ export function Header() {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const toggleExamples = () => {
+    setIsExamplesOpen(!isExamplesOpen);
+  };
+
+  const closeExamples = () => {
+    setIsExamplesOpen(false);
   };
 
   return (
@@ -45,6 +54,47 @@ export function Header() {
             >
               About
             </Link>
+            {/* Examples Dropdown */}
+            <div className="relative">
+              <button
+                onClick={toggleExamples}
+                onBlur={() => setTimeout(closeExamples, 200)}
+                className="text-gray-700 hover:text-gray-900 transition-colors font-medium flex items-center"
+              >
+                Examples
+                <svg
+                  className={`w-4 h-4 ml-1 transition-transform ${
+                    isExamplesOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              {isExamplesOpen && (
+                <div className="absolute top-full mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                  <Link
+                    href="/examples/color-mixer"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    onClick={closeExamples}
+                  >
+                    COLOURMATE
+                  </Link>
+                  <Link
+                    href="/examples/bin-height-measurement"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    onClick={closeExamples}
+                  >
+                    Bin Height Measurement
+                  </Link>
+                </div>
+              )}
+            </div>
             <a
               href="https://www.mining-sentry.com"
               target="_blank"
@@ -115,6 +165,46 @@ export function Header() {
               >
                 About
               </Link>
+              {/* Examples in Mobile */}
+              <div>
+                <button
+                  onClick={toggleExamples}
+                  className="w-full text-left text-gray-700 hover:text-gray-900 transition-colors font-medium flex items-center justify-between"
+                >
+                  Examples
+                  <svg
+                    className={`w-4 h-4 transition-transform ${
+                      isExamplesOpen ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                {isExamplesOpen && (
+                  <div className="mt-2 ml-4 flex flex-col space-y-2">
+                    <Link
+                      href="/examples/color-mixer"
+                      className="text-gray-600 hover:text-gray-900 transition-colors"
+                      onClick={closeMobileMenu}
+                    >
+                      COLOURMATE
+                    </Link>
+                    <Link
+                      href="/examples/bin-height-measurement"
+                      className="text-gray-600 hover:text-gray-900 transition-colors"
+                      onClick={closeMobileMenu}
+                    >
+                      Bin Height Measurement
+                    </Link>
+                  </div>
+                )}
+              </div>
               <a
                 href="https://www.mining-sentry.com"
                 target="_blank"

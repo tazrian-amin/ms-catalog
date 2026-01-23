@@ -1,0 +1,60 @@
+.headerSection {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.statusText {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+  }
+}
+
+.buttonContainer {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .buttonContainer {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.numericFieldContainer {
+  width: 70%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .numericFieldContainer {
+    width: 100%;
+  }
+}

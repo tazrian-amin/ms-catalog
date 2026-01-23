@@ -1,6 +1,6 @@
 import { catalogData } from "@/lib/catalog-data";
 import { CategoryCard } from "@/components/CategoryCard";
-import { ComponentSearch } from "@/components/ComponentSearch";
+import { ComponentSearchWrapper } from "@/components/ComponentSearchWrapper";
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
       </div>
 
       {/* Component Search */}
-      <ComponentSearch />
+      <ComponentSearchWrapper />
 
       {/* Component Categories */}
       <div className="space-y-8">

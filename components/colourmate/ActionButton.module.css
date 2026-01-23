@@ -1,0 +1,95 @@
+.button {
+  background-color: #ffffff;
+  min-width: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  border: 5px solid;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.button:active:not(:disabled) {
+  opacity: 0.8;
+}
+
+.primaryButton {
+  border-color: #22c55e;
+}
+
+.secondaryButton {
+  border-color: blue;
+}
+
+.dangerButton {
+  border-color: #ef4444;
+}
+
+.warningButton {
+  border-color: #f59e0b;
+}
+
+.lightBlueButton {
+  border-color: #38bdf8;
+}
+
+.blackButton {
+  border-color: #000000;
+}
+
+.runningButton {
+  background-color: #ef4444;
+  border-color: #ffffff;
+  border-width: 6px;
+  box-shadow: 0 0 32px rgba(255, 255, 255, 1);
+}
+
+.buttonText {
+  font-size: clamp(18px, 12vw, 36px);
+  letter-spacing: 0.2px;
+  font-weight: bold;
+}
+
+.primaryText {
+  color: #22c55e;
+}
+
+.secondaryText {
+  color: blue;
+}
+
+.dangerText {
+  color: #ef4444;
+}
+
+.warningText {
+  color: #f59e0b;
+}
+
+.lightBlueText {
+  color: #38bdf8;
+}
+
+.blackText {
+  color: #000000;
+}
+
+.runningText {
+  color: #ffffff;
+}
+
+.disabledButton {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.disabledText {
+  opacity: 0.6;
+}
